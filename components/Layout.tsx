@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Global } from '@emotion/react';
 import { GlobalStyles } from 'twin.macro';
 import ThemeToggle from './themeToggle';
 import stylesBase from './stylesBase';
 
-const ExternalLink: React.FC = ({ href, children }) => {
+const ExternalLink = ({ href, children }) => {
   return (
     <a
       tw="text-sm text-gray-500 hover:text-gray-600 transition"
@@ -20,7 +19,7 @@ const ExternalLink: React.FC = ({ href, children }) => {
 
 const Footer: React.FC = () => {
   return (
-    <footer tw="flex flex-col items-center mb-8 md:mt-8 md:mt-12">
+    <footer tw="flex flex-col items-center mb-8 md:mt-12">
       <div tw="flex space-x-4 mb-4">
         <ExternalLink href="https://twitter.com/JovaniPink">
           <span tw="sr-only">Twitter</span>
@@ -117,25 +116,16 @@ const Footer: React.FC = () => {
 };
 
 const Layout: React.FC = ({ children, ...rest }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <div {...rest}>
       <GlobalStyles />
       <Global styles={stylesBase} />
       <nav tw="top-0 flex justify-between items-center max-w-5xl w-full p-8 my-0 md:my-8 mx-auto bg-opacity-60">
         <h1 tw="font-bold text-2xl md:text-3xl tracking-tight mb-4 mt-8">
-          Orlando Careers Dashboard
+          Weather Bright
         </h1>
         <span tw="flex flex-row items-center">
+          <p>Dashboard</p>
           <ExternalLink href="https://github.com/JovaniPink/orlando-careers">
             <span tw="sr-only">Github</span>
             <svg tw="h-5 w-5" viewBox="0 0 24 24">

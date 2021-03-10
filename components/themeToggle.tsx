@@ -3,7 +3,7 @@ import 'twin.macro';
 
 import { ThemeContext } from './themeContext';
 
-const ThemeToggle = () => {
+const ThemeToggle = (): JSX.Element => {
   const { theme, setTheme } = React.useContext(ThemeContext);
 
   function isDark() {

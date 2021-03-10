@@ -9,3 +9,5 @@ const Dashboard = (): JSX.Element => {
     </Layout>
   );
 };
+
+export default Dashboard;

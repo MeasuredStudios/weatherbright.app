@@ -13,7 +13,7 @@ export const Home = (): JSX.Element => {
               type="search"
               name="query"
               placeholder="Search City"
-              required="required"
+              required={true}
               // value=""{props.value}""
               // handleChange={props.onChangeHandler}
               // error={props.error}
@@ -21,9 +21,7 @@ export const Home = (): JSX.Element => {
             />{' '}
             <button
               type="submit"
-              position="onForm"
-              // clicked={props.onClickHandler}
-              tw="bg-theme text-white rounded text-xl absolute top-0 right-0 bottom-0 mt-1 mr-1 mb-1 px-8 font-semibold hover:bg-blue-300 focus:outline-none focus:ring"
+              tw="bg-blue-300 text-white rounded text-xl absolute top-0 right-0 bottom-0 mt-1 mr-1 mb-1 px-8 font-semibold hover:bg-blue-400 focus:outline-none focus:ring"
             >
               Search
             </button>
@@ -31,11 +29,8 @@ export const Home = (): JSX.Element => {
         </div>
         <div tw="w-full mt-16 justify-center container mx-auto">
           <div tw="flex flex-wrap w-full lg:w-auto">
-            <div
-              tw="w-full lg:w-1/2 flex rounded-lg bg-auto"
-              // style={{backgroundImage: url('https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')}}
-            >
-              <div tw="rounded-lg py-6 pl-8 pr-32 w-full bg-theme opacity-90 text-white">
+            <div tw="w-full lg:w-1/2 flex rounded-lg bg-auto">
+              <div tw="rounded-lg py-6 pl-8 pr-32 w-full bg-secondary opacity-90 text-white">
                 <div tw="mb-20">
                   <h2 tw="font-bold text-3xl leading-none pb-1">Tuesday</h2>
                   <h3 tw="leading-none pb-2 pl-1">15 Jan 19</h3>
