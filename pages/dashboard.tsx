@@ -24,7 +24,9 @@ const Dashboard = (): JSX.Element => {
   return (
     <Layout>
       <div tw="container px-5 mx-auto">
-        <h2 tw="mb-8 text-4xl font-bold tracking-tighter md:text-7xl">Teams</h2>
+        <h2 tw="mb-8 text-3xl font-bold tracking-tighter md:text-4xl">
+          Graphs & Charts
+        </h2>
         <section tw="grid grid-cols-3 gap-x-8 gap-y-16">
           <TileArticle />
           <TileArticle />

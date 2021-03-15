@@ -19,25 +19,34 @@ interface City {
 }
 
 const LocationSearchForm = (): JSX.Element => {
-  const [userCity, setUserCity] = React.useState<City | null>(null);
+  const [userCity, setUserCity] = React.useState<City | void>('Orlando');
   const [returnedData, setReturnedData] = React.useState(null);
 
   React.useEffect(() => {
-    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-    const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
-    const finalURL = API_URL + `?q=${userCity}&appid=${API_KEY}&units=metric`;
-    return setReturnedData(useAPI(finalURL).data);
+    console.log(userCity);
   }, [userCity]);
 
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
+    e
+  ): void => {
+    return setUserCity(e.currentTarget.value);
+  };
+
   return (
-    <>
-      <h1 tw="font-bold text-5xl tracking-tight mb-4">Location</h1>
+    <div tw="mt-16 w-full">
+      <h2 tw="mb-8 text-3xl font-bold tracking-tighter md:text-4xl">
+        Location
+      </h2>
       <div tw="h-auto w-full">
         <div tw="relative">
-          <Input />{' '}
+          <Input
+            type={'search'}
+            value={userCity}
+            onChangeHandler={handleChange}
+          />{' '}
           <button
             type="submit"
-            tw="bg-blue-300 text-white rounded text-xl absolute top-0 right-0 bottom-0 mt-1 mr-1 mb-1 px-8 font-semibold hover:bg-blue-400 focus:outline-none focus:ring"
+            tw="bg-blue-200 text-white rounded text-xl absolute top-0 right-0 bottom-0 mt-1 mr-1 mb-1 px-8 font-semibold hover:bg-blue-400 focus:outline-none focus:ring"
           >
             Search
           </button>
@@ -46,7 +55,7 @@ const LocationSearchForm = (): JSX.Element => {
           <p>{JSON.stringify(returnedData)}</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
