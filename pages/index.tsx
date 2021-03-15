@@ -10,8 +10,8 @@ const Home = (): JSX.Element => {
   return (
     <Layout>
       <section tw="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <QuoteDisplay />
         <LocationSearchForm />
+        <QuoteDisplay />
         <WeatherDisplay />
       </section>
     </Layout>

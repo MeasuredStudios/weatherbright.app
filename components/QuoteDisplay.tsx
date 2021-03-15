@@ -1,9 +1,9 @@
 import * as React from 'react';
 import 'twin.macro';
 
-const QuoteDisplay = () => {
+const QuoteDisplay = (): JSX.Element => {
   return (
-    <div tw="border border-blue-200 rounded p-6 mt-16 w-full dark:border-gray-800 bg-blue-50 dark:bg-blue-50">
+    <div tw="border border-blue-200 rounded p-8 mt-16 w-full">
       <h2 tw="mb-8 text-3xl font-bold tracking-tighter md:text-4xl">
         Weather Bright
       </h2>
