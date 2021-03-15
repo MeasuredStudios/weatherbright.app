@@ -2,7 +2,7 @@ import * as React from 'react';
 import 'twin.macro';
 import ExternalLink from './ui/ExternalLink';
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   return (
     <footer tw="flex flex-col items-center mb-8 md:mt-12">
       <div tw="flex space-x-4 mb-4">

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'twin.macro';
 
-const WeatherDisplay = () => {
+const WeatherDisplay = (): JSX.Element => {
   return (
     <div tw="w-full mt-16 justify-center container mx-auto">
       <div tw="flex flex-wrap w-full lg:w-auto">
@@ -119,16 +119,16 @@ const WeatherDisplay = () => {
 
         <div tw="w-full lg:w-1/2 flex ml-0">
           <div tw="lg:my-3 bg-theme p-8 lg:rounded-r-lg w-full">
-            <div tw="flex justify-between w-64 mb-4 w-full">
-              <div tw="w-auto font-bold uppercase text-sm">Precipitation</div>
+            <div tw="flex justify-between w-64 mb-4">
+              <div tw="w-auto font-bold text-sm">Pressure</div>
               <div tw="w-auto text-right">10 %</div>
             </div>
-            <div tw="flex justify-between w-64 mb-4 w-full">
-              <div tw="w-auto font-bold uppercase text-sm">Humidity</div>
+            <div tw="flex justify-between w-64 mb-4">
+              <div tw="w-auto font-bold text-sm">Humidity</div>
               <div tw="w-auto text-right">29 %</div>
             </div>
-            <div tw="flex justify-between w-64 mb-8 w-full">
-              <div tw="w-auto font-bold uppercase text-sm">Wind</div>
+            <div tw="flex justify-between w-64 mb-8">
+              <div tw="w-auto font-bold text-sm">Wind</div>
               <div tw="w-auto text-right">12 Mph</div>
             </div>
             <div tw="flex flex-row">

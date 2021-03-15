@@ -3,7 +3,7 @@ import 'twin.macro';
 import NavBar from './NavBar';
 import Footer from './Footer';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }): JSX.Element => {
   return (
     <>
       <NavBar />

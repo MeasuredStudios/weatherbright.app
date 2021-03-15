@@ -24,7 +24,7 @@ type ThemeContextType = {
 
 const ThemeContext = React.createContext<ThemeContextType | string>('light');
 
-const ThemeProvider = ({ initialTheme, children }) => {
+const ThemeProvider = ({ initialTheme, children }): JSX.Element => {
   const [theme, setTheme] = React.useState(getInitialTheme);
   const [value, setValue] = React.useState({ theme, setTheme });
 

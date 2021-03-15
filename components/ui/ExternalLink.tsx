@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'twin.macro';
 
-const ExternalLink = ({ href, children }) => {
+const ExternalLink = ({ href, children }): JSX.Element => {
   return (
     <a
       tw="text-sm text-gray-500 hover:text-gray-600 transition"
