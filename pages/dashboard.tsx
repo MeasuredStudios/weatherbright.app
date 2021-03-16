@@ -23,7 +23,7 @@ const chartList = {
 const TileArticle = (props) => {
   return (
     <article tw="relative" key={props.index}>
-      <span tw="before:(content block absolute top-0 left-0 w-full h-full z-10 bg-blue-200 opacity-60) relative block w-full rounded-sm overflow-hidden after:(content block absolute top-0 left-0 w-full h-full opacity-20 z-20)">
+      <span tw="before:(content block absolute top-0 left-0 w-full h-full z-10 bg-blue-200 opacity-60) relative block w-full rounded-lg overflow-hidden after:(content block absolute top-0 left-0 w-full h-full opacity-20 z-20)">
         {props.item}
       </span>
       <a tw="flex flex-col items-center justify-center absolute top-0 left-0 w-full h-full p-1 z-30 border-b-0 text-center">

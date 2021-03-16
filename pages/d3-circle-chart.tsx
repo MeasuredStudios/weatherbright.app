@@ -82,7 +82,7 @@ const D3CircleChart = (): JSX.Element => {
           </svg>
         </div>
         <button
-          tw="bg-blue-200 text-white rounded text-xl m-2 px-8 max-w-xs font-semibold hover:bg-blue-400 focus:outline-none focus:ring"
+          tw="bg-blue-200 text-white rounded-lg text-xl m-2 px-8 max-w-xs font-semibold hover:bg-blue-400 focus:outline-none focus:ring"
           onClick={() => setData(data.map((value) => value + 5))}
         >
           Update data
