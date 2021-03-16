@@ -18,7 +18,7 @@ const LocationSearchForm = (props): JSX.Element => {
     data,
     mutate,
   } = useSWR(
-    `https://api.openweathermap.org/data/2.5/weather?q=${finalCitySubmit}&appid=${props.open}&units=metric`,
+    `https://api.openweathermap.org/data/2.5/weather?q=${finalCitySubmit}&appid=${props.open}&units=imperial`,
     fetcher,
     { revalidateOnFocus: false, revalidateOnReconnect: false }
   );
