@@ -3,7 +3,9 @@ import 'twin.macro';
 import NavBar from './NavBar';
 import Footer from './Footer';
 
-const Layout = ({ children }): JSX.Element => {
+type Props = { children: React.ReactNode };
+
+const Layout: React.FC<Props> = ({ children }): JSX.Element => {
   return (
     <>
       <NavBar />

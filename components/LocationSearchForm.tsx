@@ -5,26 +5,27 @@ import Input from './ui/Input';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const useAPI = (url: string) => {
-  const { data, error } = useSWR(url, fetcher);
-  return {
-    data: data,
-    isLoading: !error && !data,
-    isError: error,
-  };
-};
-
 interface City {
   city: string;
 }
 
-const LocationSearchForm = (): JSX.Element => {
+const LocationSearchForm = (props): JSX.Element => {
   const [userCity, setUserCity] = React.useState<City | void>('Orlando');
-  const [returnedData, setReturnedData] = React.useState(null);
+  const [finalCitySubmit, setFinalCitySubmit] = React.useState('');
+  const {
+    isLoading,
+    isError,
+    data,
+    mutate,
+  } = useSWR(
+    `https://api.openweathermap.org/data/2.5/weather?q=${finalCitySubmit}&appid=${props.open}&units=metric`,
+    fetcher,
+    { revalidateOnFocus: false, revalidateOnReconnect: false }
+  );
 
   React.useEffect(() => {
-    console.log(userCity);
-  }, [userCity]);
+    mutate();
+  }, [finalCitySubmit]);
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
     e
@@ -48,13 +49,14 @@ const LocationSearchForm = (): JSX.Element => {
             tw="bg-blue-200 text-white rounded-lg text-xl absolute top-0 right-0 bottom-0 mt-1 mr-1 mb-1 px-8 font-semibold hover:bg-blue-400 focus:outline-none focus:ring"
             type="submit"
             onClick={() => {
-              return console.log(userCity);
+              setFinalCitySubmit(userCity);
             }}
           >
             Search
           </button>
         </div>
       </div>
+      <p>{JSON.stringify(data)}</p>
     </div>
   );
 };

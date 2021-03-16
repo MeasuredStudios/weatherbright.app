@@ -5,6 +5,7 @@ import Display from './Display';
 const WeatherDisplay = (): JSX.Element => {
   return (
     <Display>
+      <h2 tw="mb-8 text-3xl font-bold tracking-tighter md:text-4xl">Weather</h2>
       <div tw="w-full flex flex-row justify-evenly items-center border rounded-lg border-blue-200">
         <div tw="p-8">
           <svg
