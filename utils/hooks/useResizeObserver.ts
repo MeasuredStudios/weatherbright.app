@@ -9,7 +9,9 @@ import ResizeObserver from 'resize-observer-polyfill';
  * Doesn't play well with SVG.
  */
 
-const useResizeObserver = (ref: { current: any }) => {
+const useResizeObserver = (
+  ref: React.MutableRefObject<HTMLDivElement>
+): DOMRectReadOnly => {
   const [dimensions, setDimensions] = React.useState<DOMRectReadOnly>(null);
   React.useEffect(() => {
     const observeTarget = ref.current;

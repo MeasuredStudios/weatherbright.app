@@ -100,7 +100,7 @@ const WeatherDisplay = (props): JSX.Element => {
                 tw=" w-4 inline mr-1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 425.963 425.963"
-                style={{ enableBackground: 'new 0 0 425.963 425.963' }}
+                enableBackground="new 0 0 129 129"
               >
                 <g>
                   <path

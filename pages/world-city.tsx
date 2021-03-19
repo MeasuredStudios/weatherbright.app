@@ -1,18 +1,18 @@
 import * as React from 'react';
 import 'twin.macro';
-import { Motion, spring } from "react-motion";
+import { Motion, spring } from 'react-motion';
 import {
   ComposableMap,
   ZoomableGlobe,
   Geographies,
-  Geography
-} from "react-simple-maps";
+  Geography,
+} from 'react-simple-maps';
 import Head from 'next/head';
 import Layout from '../components/Layout';
 
 const mapStyles = {
-  width: "90%",
-  height: "auto"
+  width: '90%',
+  height: 'auto',
 };
 
 const Map = ({ center }) => (
@@ -20,11 +20,11 @@ const Map = ({ center }) => (
     <Motion
       defaultStyle={{
         x: center[0],
-        y: center[1]
+        y: center[1],
       }}
       style={{
         x: spring(center[0]),
-        y: spring(center[1])
+        y: spring(center[1]),
       }}
     >
       {({ x, y }) => (
@@ -54,7 +54,7 @@ const Map = ({ center }) => (
                     geography={geo}
                     projection={proj}
                     style={{
-                      default: { fill: "#CFD8DC" }
+                      default: { fill: '#CFD8DC' },
                     }}
                   />
                 ))
@@ -68,8 +68,10 @@ const Map = ({ center }) => (
 );
 
 const Globe = () => {
-    const [centerPoint, setCenterPoint] = React.setState({ center: [0, 0] })
-    return(<Layout>
-        <Map center={centerPoint} />
-    </Layout>)
-}
+  const [centerPoint, setCenterPoint] = React.setState({ center: [0, 0] });
+  return (
+    <Layout>
+      <Map center={centerPoint} />
+    </Layout>
+  );
+};
