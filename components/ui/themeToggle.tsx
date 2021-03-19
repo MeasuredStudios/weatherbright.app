@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'twin.macro';
 
-import { ThemeContext } from './themeContext';
+import { ThemeContext } from '../../utils/context/themeContext';
 
 const ThemeToggle = (): JSX.Element => {
   const { theme, setTheme } = React.useContext(ThemeContext);

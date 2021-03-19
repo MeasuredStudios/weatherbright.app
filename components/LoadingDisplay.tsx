@@ -2,7 +2,7 @@ import * as React from 'react';
 import 'twin.macro';
 import Display from './Display';
 
-const ErrorDisplay = (): JSX.Element => {
+const LoadingDisplay = (): JSX.Element => {
   return (
     <Display>
       <h2 tw="mb-8 text-3xl font-bold tracking-tighter md:text-4xl">Weather</h2>
@@ -23,4 +23,4 @@ const ErrorDisplay = (): JSX.Element => {
   );
 };
 
-export default ErrorDisplay;
+export default LoadingDisplay;

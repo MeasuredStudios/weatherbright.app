@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Global, css } from '@emotion/react';
 import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro';
 
@@ -23,7 +24,7 @@ const stylesBase = css`
   }
 `;
 
-const GlobalStyles = () => (
+const GlobalStyles = (): JSX.Element => (
   <>
     <BaseStyles />
     <Global styles={stylesBase} />

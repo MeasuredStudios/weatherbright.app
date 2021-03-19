@@ -2,7 +2,8 @@ import * as React from 'react';
 import 'twin.macro';
 import Display from './Display';
 
-const WeatherDisplay = (): JSX.Element => {
+const WeatherDisplay = (props): JSX.Element => {
+  console.log(props);
   return (
     <Display>
       <h2 tw="mb-8 text-3xl font-bold tracking-tighter md:text-4xl">Weather</h2>

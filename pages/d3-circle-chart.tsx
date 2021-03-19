@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'twin.macro';
 import Layout from '../components/Layout';
-import useResizeObserver from '../hooks/useResizeObserver';
+import useResizeObserver from '../utils/hooks/useResizeObserver';
 import * as d3 from 'd3';
 
 const D3CircleChart = (): JSX.Element => {

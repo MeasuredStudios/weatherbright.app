@@ -1,6 +1,6 @@
 # NextJS Typescript Boilerplate
 
-Bootstrap a developer-friendly NextJS app configured with:
+> Bootstrap a developer-friendly NextJS app configured with:
 
 - [Typescript](https://www.typescriptlang.org/)
 - Linting with [ESLint](https://eslint.org/)
@@ -8,6 +8,20 @@ Bootstrap a developer-friendly NextJS app configured with:
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
 - Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate)
+
+## Getting started
+
+Weather Bright is using a couple of libraries to make the work happen:
+
+- Reactjs
+- Tailwindcss
+- emotion
+- twin.macro
+- Framer Motion
+- swr
+- Xstate
+  - https://xstate.js.org/viz/?gist=bddfaf940dc2c9ebd69c631e053873c5
+- D3.js
 
 ## Deploy your own
 

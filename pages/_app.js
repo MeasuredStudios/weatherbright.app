@@ -1,5 +1,5 @@
-import GlobalStyles from './../styles/GlobalStyles';
-import { ThemeProvider } from '../components/ui/themeContext';
+import GlobalStyles from '../utils/styles/GlobalStyles';
+import { ThemeProvider } from '../utils/context/themeContext';
 
 const App = ({ Component, pageProps }) => (
   <ThemeProvider>

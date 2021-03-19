@@ -1,35 +1,16 @@
 import * as React from 'react';
 import 'twin.macro';
-import useSWR from 'swr';
 import Input from './ui/Input';
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
 interface City {
   city: string;
 }
 
 const LocationSearchForm = (props): JSX.Element => {
-  const [userCity, setUserCity] = React.useState<City | void>('Orlando');
-  const [finalCitySubmit, setFinalCitySubmit] = React.useState('');
-  const {
-    isLoading,
-    isError,
-    data,
-    mutate,
-  } = useSWR(
-    `https://api.openweathermap.org/data/2.5/weather?q=${finalCitySubmit}&appid=${props.open}&units=imperial`,
-    fetcher,
-    { revalidateOnFocus: false, revalidateOnReconnect: false }
-  );
-
-  React.useEffect(() => {
-    mutate();
-  }, [finalCitySubmit]);
+  const [userCity, setUserCity] = React.useState<City | undefined>('');
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
     e
-  ): void => {
+  ): string => {
     return setUserCity(e.currentTarget.value);
   };
 
@@ -56,7 +37,6 @@ const LocationSearchForm = (props): JSX.Element => {
           </button>
         </div>
       </div>
-      <p>{JSON.stringify(data)}</p>
     </div>
   );
 };
