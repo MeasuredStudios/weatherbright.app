@@ -28,7 +28,7 @@ const ThemeToggle = (): JSX.Element => {
         tw="w-6 h-6 focus:outline-none fill-current text-primary hover:text-secondary"
         onClick={() => setTheme(isDark() ? 'light' : 'dark')}
       >
-        {process.browser ? isDark() ? <Moon /> : <Sun /> : null}
+        {isDark() ? <Moon /> : <Sun />}
       </button>
     </div>
   );

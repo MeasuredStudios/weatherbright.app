@@ -29,7 +29,6 @@ const ThemeProvider = ({
   children,
 }: IProviderProps): JSX.Element => {
   const [theme, setTheme] = React.useState(getInitialTheme);
-  const [value, setValue] = React.useState({ theme, setTheme });
 
   const rawSetTheme = (theme: string) => {
     const root = window.document.documentElement;

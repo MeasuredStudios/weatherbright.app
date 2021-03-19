@@ -72,22 +72,6 @@ const Home = ({
       <section tw="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <LocationSearchForm />
         <QuoteDisplay />
-        <div>
-          <ul>
-            <li>
-              Machine state: <code>{state.value}</code>
-            </li>
-            <li>
-              Fetched name:{' '}
-              <code>{!!state.context.data && state.context.data.name}</code>
-            </li>
-            <li>
-              Error:{' '}
-              <code>{state.context.error && state.context.error.message}</code>
-            </li>
-            <button onClick={() => send('REFETCH')}>Refetch</button>
-          </ul>
-        </div>
         {(() => {
           switch (state.value) {
             case 'fetching':

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import 'twin.macro';
+import { getCurrentDate } from '../utils/datey';
 import Display from './Display';
 
 const WeatherDisplay = (props): JSX.Element => {
-  console.log(props);
   return (
     <Display>
       <h2 tw="mb-8 text-3xl font-bold tracking-tighter md:text-4xl">Weather</h2>
@@ -83,13 +83,16 @@ const WeatherDisplay = (props): JSX.Element => {
               />
             </g>
           </svg>
-          <strong tw="leading-none text-6xl block font-bold">29ºC</strong>
-          <b tw="text-2xl block font-bold">Sunny</b>
+          <strong tw="leading-none text-6xl block font-bold">
+            {props.data.main.temp}ºC
+          </strong>
+          <b tw="text-2xl block font-bold">{props.data.weather[0].main}</b>
+          <b tw="text-2xl block">{props.data.weather[0].description}</b>
         </div>
         <div tw="p-8">
           <div tw="mb-8">
             <h2 tw="text-3xl font-bold tracking-tighter md:text-4xl">
-              Tuesday
+              {getCurrentDate()}
             </h2>
             <h3 tw="leading-none pb-2 pl-1">15 Jan 19</h3>
             <p tw="flex content-center opacity-75">
@@ -109,20 +112,20 @@ const WeatherDisplay = (props): JSX.Element => {
                   ></path>
                 </g>
               </svg>
-              París, FR
+              {props.data.name}, {props.data.sys.country}
             </p>
           </div>
           <div tw="flex justify-between w-64 mb-4">
             <div tw="w-auto font-bold text-sm">Pressure</div>
-            <div tw="w-auto text-right">10 %</div>
+            <div tw="w-auto text-right">{props.data.main.pressure}</div>
           </div>
           <div tw="flex justify-between w-64 mb-4">
             <div tw="w-auto font-bold text-sm">Humidity</div>
-            <div tw="w-auto text-right">29 %</div>
+            <div tw="w-auto text-right">{props.data.main.humidity}</div>
           </div>
           <div tw="flex justify-between w-64 mb-8">
             <div tw="w-auto font-bold text-sm">Wind</div>
-            <div tw="w-auto text-right">12 Mph</div>
+            <div tw="w-auto text-right">{props.data.wind.speed} Mph</div>
           </div>
         </div>
       </div>
