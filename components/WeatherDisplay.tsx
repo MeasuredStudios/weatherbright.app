@@ -84,7 +84,7 @@ const WeatherDisplay = (props): JSX.Element => {
             </g>
           </svg>
           <strong tw="leading-none text-6xl block font-bold">
-            {props.data.main.temp}ºC
+            {props.data.main.temp}ºF
           </strong>
           <b tw="text-2xl block font-bold">{props.data.weather[0].main}</b>
           <b tw="text-2xl block">{props.data.weather[0].description}</b>
