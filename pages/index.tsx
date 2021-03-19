@@ -52,7 +52,8 @@ const useSWRMachine = (key, fetcher, options) => {
   return [state, send];
 };
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (...args: Parameters<typeof fetch>) =>
+  fetch(...args).then((response) => response.json());
 
 const Home = ({
   openWeather,
