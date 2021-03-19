@@ -1,17 +1,18 @@
 import * as React from 'react';
 import 'twin.macro';
+import { CityContext } from '../utils/context/cityContext';
 import Input from './ui/Input';
-interface City {
-  city: string;
-}
 
-const LocationSearchForm = (props): JSX.Element => {
-  const [userCity, setUserCity] = React.useState<City | undefined>('');
+const LocationSearchForm = (): JSX.Element => {
+  const userCity = React.useContext(CityContext);
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
     e
-  ): string => {
-    return setUserCity(e.currentTarget.value);
+  ): void => {
+    return userCity.setState({
+      city: e.currentTarget.value,
+      shouldFetch: userCity.state.shouldFetch,
+    });
   };
 
   return (
@@ -23,14 +24,17 @@ const LocationSearchForm = (props): JSX.Element => {
         <div tw="relative">
           <Input
             type={'search'}
-            value={userCity}
+            value={userCity.state.city}
             onChangeHandler={handleChange}
           />{' '}
           <button
             tw="bg-blue-200 text-white rounded-lg text-xl absolute top-0 right-0 bottom-0 mt-1 mr-1 mb-1 px-8 font-semibold hover:bg-blue-400 focus:outline-none focus:ring"
             type="submit"
             onClick={() => {
-              setFinalCitySubmit(userCity);
+              userCity.setState({
+                city: userCity.state.city,
+                shouldFetch: !userCity.state.shouldFetch,
+              });
             }}
           >
             Search

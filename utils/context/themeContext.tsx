@@ -17,14 +17,17 @@ const getInitialTheme = (): string => {
   return 'dark';
 };
 
-type ThemeContextType = {
+type ThemeContextState = {
   theme: string;
-  setTheme: (value: string) => void;
+  setTheme: (theme) => {};
 };
 
-const ThemeContext = React.createContext<ThemeContextType | string>('light');
+const ThemeContext = React.createContext<ThemeContextState | null>(null);
 
-const ThemeProvider = ({ initialTheme, children }): JSX.Element => {
+const ThemeProvider = ({
+  initialTheme,
+  children,
+}: IProviderProps): JSX.Element => {
   const [theme, setTheme] = React.useState(getInitialTheme);
   const [value, setValue] = React.useState({ theme, setTheme });
 
@@ -47,8 +50,15 @@ const ThemeProvider = ({ initialTheme, children }): JSX.Element => {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 
 export { ThemeContext, ThemeProvider };
+
+export interface IProviderProps {
+  initialTheme: () => string;
+  children?: any;
+}

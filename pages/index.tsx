@@ -2,6 +2,7 @@ import * as React from 'react';
 import 'twin.macro';
 import Head from 'next/head';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { CityContext } from '../utils/context/cityContext';
 
 import useSWR from 'swr';
 import { swrMachine } from '../utils/machines/swrMachine';
@@ -56,16 +57,20 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const Home = ({
   openWeather,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
-  const hold =
-    'https://api.openweathermap.org/data/2.5/weather?q=osdfsfdsdo&appid=${openWeather}&units=imperial';
-  const [state, send] = useSWRMachine(null, fetcher, {
-    revalidateOnFocus: false,
-    revalidateOnReconnect: false,
-  });
+  const fetchState = React.useContext(CityContext);
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${fetchState.state.city}&appid=${openWeather}&units=imperial`;
+  const [state, send] = useSWRMachine(
+    fetchState.state.shouldFetch ? url : null,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+    }
+  );
   return (
     <Layout>
       <section tw="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <LocationSearchForm open={openWeather} />
+        <LocationSearchForm />
         <QuoteDisplay />
         <div>
           <ul>
