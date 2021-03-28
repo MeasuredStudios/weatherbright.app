@@ -72,7 +72,7 @@
     "@babel/core": "7.13.10",
     "@emotion/babel-plugin": "11.2.0",
     "@emotion/babel-preset-css-prop": "11.2.0",
-    "@testing-library/jest-dom": "5.11.9",
+    "@testing-library/jest-dom": "5.11.10",
     "@testing-library/react": "11.2.5",
     "@testing-library/react-hooks": "5.1.0",
     "@testing-library/user-event": "12.8.3",
