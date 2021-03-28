@@ -58,7 +58,7 @@
     "react-simple-maps": "2.3.0",
     "react-icons": "4.2.0",
     "resize-observer-polyfill": "1.5.1",
-    "d3": "6.6.0",
+    "d3": "6.6.1",
     "d3-hexbin": "0.2.2",
     "lodash": "4.17.21",
     "ml5": "0.6.1",
